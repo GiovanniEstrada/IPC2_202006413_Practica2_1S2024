@@ -1,5 +1,7 @@
 from flask import Flask
 from flask import render_template, request
+from ClaseUsuario import ClaseUsuario
+
 app = Flask(__name__)
 listaUsuarios = []
 
@@ -26,13 +28,14 @@ def insertarUsuario():
 
     # SE VALIDA QUE CLIENTE NO EXISTA
     for usuario in listaUsuarios:
-        if str(usuario[2]) == str(nit):
+        if str(usuario.nit) == str(nit):
             error = "Usuario ya existe..."
     
     if error != "":
         return render_template("login.html", error = error)
 
-    usuario = [request.form.get('Nombre'), request.form.get('Correo'), request.form.get('Nit')]
+
+    usuario = ClaseUsuario(nombre, correo, nit)
     listaUsuarios.append(usuario)
     return render_template("login.html", success = "¡Usuario ingresado con éxito!")
 

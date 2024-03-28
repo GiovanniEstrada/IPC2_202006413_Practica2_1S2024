@@ -20,9 +20,9 @@
             <tbody>
                 {% for usuario in ListaUsuarios %}
                 <tr>
-                    <td class="tblColumna">{{usuario[0]}}</td>
-                    <td class="tblColumna">{{usuario[1]}}</td>
-                    <td class="tblColumna">{{usuario[2]}}</td>
+                    <td class="tblColumna">{{usuario.nombre}}</td>
+                    <td class="tblColumna">{{usuario.correo}}</td>
+                    <td class="tblColumna">{{usuario.nit}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
