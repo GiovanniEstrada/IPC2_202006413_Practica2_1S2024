@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista clientes</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="center">
+        <h1 class="titulo">LISTA DE CLIENTES</h1>
+        <table class="greyGridTable">
+            <thead>
+                <tr>
+                    <td class="tblColumna">Nombre cliente</td>
+                    <td class="tblColumna">Correo electrónico</td>
+                    <td class="tblColumna">NIT</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in ListaUsuarios %}
+                <tr>
+                    <td class="tblColumna">{{usuario[0]}}</td>
+                    <td class="tblColumna">{{usuario[1]}}</td>
+                    <td class="tblColumna">{{usuario[2]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

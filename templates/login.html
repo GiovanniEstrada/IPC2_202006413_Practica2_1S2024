@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="center">
+            <h1 class="titulo">REGISTRO DE CLIENTE</h1>
+            {% if error %}
+                <div class="error">{{ error }}</div>
+            {% endif %}
+            {% if success %}
+                <div class="success">{{ success }}</div>
+            {% endif %}
+            <form action="/POST" method="POST">
+                <div class="flex">
+                    <h2 class="label-name col1 row1">Nombre:</h2>
+                    <input type="text" class="col2 row1" placeholder="EJ. José Tobías" id="NombreCliente" name="Nombre">
+
+                    <h2 class="label-email col1 row2">Correo Electrónico:</h2>
+                    <input type="text" class="col2 row 2" placeholder="EJ. example@gmail.com" id="CorreoCliente" name="Correo">
+
+                    <h2 class="label-nit col1 row3">NIT:</h2>
+                    <input type="text" class="col2 row3" placeholder="EJ. 1112236-6" id="NitCliente" name="Nit">
+                </div>
+                <div class="btns">
+                    <button type="submit" class="btn" id="guardar">GUARDAR</button>
+                    <a href="/LISTADO" class="btn" id="verClientes">VER CLIENTES</a>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
